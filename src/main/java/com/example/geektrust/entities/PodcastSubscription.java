@@ -1,0 +1,42 @@
+package com.example.geektrust.entities;
+
+import com.example.geektrust.constants.SubscriptionCategory;
+
+import java.time.LocalDate;
+
+public class PodcastSubscription implements Subscription {
+    public static final SubscriptionCategory subscriptionCategory = SubscriptionCategory.PODCAST;
+
+    protected Price subscriptionPrice;
+    protected int durationInMonths;
+    protected LocalDate startDate;
+
+    public PodcastSubscription(Price subscriptionPrice, int duration, LocalDate startDate) {
+        super();
+        this.subscriptionPrice = subscriptionPrice;
+        this.durationInMonths = duration;
+        this.startDate = startDate;
+    }
+
+    @Override
+    public Price getSubscriptionPrice() {
+        return this.subscriptionPrice;
+    }
+
+    @Override
+    public int getDurationInMonths() {
+        return durationInMonths;
+    }
+
+    @Override
+    public LocalDate getStartDate() {
+        return this.startDate;
+    }
+
+    @Override
+    public SubscriptionCategory getSubscriptionCategory() {
+        return subscriptionCategory;
+    }
+
+
+}
